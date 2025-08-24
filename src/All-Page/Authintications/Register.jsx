@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { NavLink } from "react-router-dom";
-import useAuth from './../../CustomHooks/useAuth';
-
+import useAuth from "./../../CustomHooks/useAuth";
 
 export default function Register() {
   const { createUser } = useAuth();
@@ -14,7 +13,7 @@ export default function Register() {
     reset,
   } = useForm();
 
-  // ✅ Form Submit
+  // Form Submit
   const onSubmit = async (data) => {
     try {
       console.clear();
@@ -22,7 +21,7 @@ export default function Register() {
       // Firebase Auth Register
       await createUser(data.email, data.password);
 
-      // File গুলোকে শুধু নাম হিসেবে দেখানো
+     
       const displayData = {
         ...data,
         directorPhoto: data.directorPhoto?.[0]?.name || "",
@@ -32,6 +31,12 @@ export default function Register() {
       };
 
       console.log("REGISTER_FORM_SUBMIT", displayData);
+
+      await fetch("http://localhost:5000/api/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(displayData),
+      });
 
       Swal.fire({
         icon: "success",
@@ -88,7 +93,9 @@ export default function Register() {
                 <input
                   type={field.type || "text"}
                   placeholder={field.label}
-                  {...register(field.id, { required: "This field is required" })}
+                  {...register(field.id, {
+                    required: "This field is required",
+                  })}
                   className={`w-full rounded-xl border px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition ${
                     errors[field.id] ? "border-red-500" : "border-gray-200"
                   }`}
