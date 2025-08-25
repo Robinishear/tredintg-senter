@@ -23,62 +23,62 @@ const HomeSlaider = () => {
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 2",
-                        legend: "Task, Earn, Repeat"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 3",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 4",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 5",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 6",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 7",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 8",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 9",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 10",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 11",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 12",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                     {
                         src: "https://i.ibb.co.com/R4YYdgtn/4.png",
                         alt: "Banner 13",
-                        legend: "Be a TaskNinja Today"
+                        legend: "welcome to Bangladesh technical Education Institute "
                     },
                 ].map(({ src, alt, legend }, idx) => (
                     <div key={idx} className="relative rounded-xl overflow-hidden">

@@ -21,7 +21,6 @@ export default function Register() {
       // Firebase Auth Register
       await createUser(data.email, data.password);
 
-     
       const displayData = {
         ...data,
         directorPhoto: data.directorPhoto?.[0]?.name || "",
@@ -57,19 +56,21 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen mt-5 flex items-center justify-center p-4">
+    <div className="min-h-screen mt-5 flex items-center justify-center px-4">
       <div className="w-full max-w-6xl">
-        <div className="relative rounded-2xl px-5 py-2 shadow-lg hover:shadow-cyan-600/70 transition bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 p-8">
-          <h1 className="text-2xl font-bold text-gray-100 text-center">
+        <div className="relative rounded-2xl px-6 py-8 shadow-lg hover:shadow-cyan-600/70 transition bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+          {/* Heading */}
+          <h1 className="text-3xl font-bold text-gray-100 text-center">
             Branch Registration
           </h1>
-          <p className="text-sm text-gray-400 text-center mt-1">
+          <p className="text-base text-gray-400 text-center mt-1">
             Fill the form below to register
           </p>
 
+          {/* Form */}
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5"
+            className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {/* Text Inputs */}
             {[
@@ -86,8 +87,8 @@ export default function Register() {
               { id: "username", label: "Username" },
               { id: "password", label: "Password", type: "password" },
             ].map((field) => (
-              <div key={field.id} className="col-span-1">
-                <label className="block text-sm text-gray-300 mb-1">
+              <div key={field.id} className="flex flex-col">
+                <label className="block text-sm md:text-base text-gray-300 mb-1">
                   {field.label}
                 </label>
                 <input
@@ -96,7 +97,7 @@ export default function Register() {
                   {...register(field.id, {
                     required: "This field is required",
                   })}
-                  className={`w-full rounded-xl border px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition ${
+                  className={`w-full rounded-xl border px-4 py-3 text-sm md:text-base outline-none focus:ring-2 focus:ring-indigo-500 transition ${
                     errors[field.id] ? "border-red-500" : "border-gray-200"
                   }`}
                 />
@@ -115,14 +116,14 @@ export default function Register() {
               { id: "nationalIdPhoto", label: "National ID Photo" },
               { id: "signaturePhoto", label: "Signature Photo" },
             ].map((file) => (
-              <div key={file.id} className="col-span-1">
-                <label className="block text-sm text-gray-300 mb-1">
+              <div key={file.id} className="flex flex-col">
+                <label className="block text-sm md:text-base text-gray-300 mb-1">
                   {file.label}
                 </label>
                 <input
                   type="file"
                   {...register(file.id, { required: "This field is required" })}
-                  className={`w-full text-sm border rounded-xl px-3 py-2 ${
+                  className={`w-full text-sm md:text-base border rounded-xl px-3 py-2 bg-gray-50 ${
                     errors[file.id] ? "border-red-500" : "border-gray-200"
                   }`}
                 />
@@ -135,18 +136,19 @@ export default function Register() {
             ))}
 
             {/* Submit Button */}
-            <div className="col-span-2">
+            <div className="col-span-1 md:col-span-2">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full rounded-xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3 transition"
+                className="w-full rounded-xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3 text-lg transition"
               >
                 {isSubmitting ? "Submitting..." : "Register"}
               </button>
             </div>
           </form>
 
-          <p className="mt-6 text-center text-sm text-gray-400">
+          {/* Footer Link */}
+          <p className="mt-6 text-center text-sm md:text-base text-gray-400">
             Already have an account?{" "}
             <NavLink to="/Login" className="text-indigo-400 hover:underline">
               Sign in

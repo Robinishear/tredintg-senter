@@ -60,7 +60,7 @@ const Navbar = () => {
     { title: "Course List", path: "/CourseList" },
     { title: "Branches List", path: "/BranchesList" },
     { title: "Students List", path: "/StudentsList" },
-    { title: "Student Result", path: "/StudentResult" },
+    { title: "Result", path: "/StudentResult" },
     { title: "Online Exam", path: "/OnlineExam" },
     { title: "Verified Institutes", path: "/Institutes" },
     { title: "Dashboard", path: "/AdHome" },
@@ -69,7 +69,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className={`w-full top-0 z-20 border border-blue-300 rounded-2xl ${currentTheme}`}
+      className={`w-full top-0 z-20  rounded-2xl ${currentTheme}`}
     >
       <div className="items-center px-4 max-w-screen-xl mx-auto md:px-8 lg:flex lg:justify-between">
         {/* Logo and Hamburger */}
@@ -84,7 +84,7 @@ const Navbar = () => {
               onClick={toggleTheme}
               className="rounded-md text-xs transition-colors cursor-pointer text-white whitespace-pre-line"
             >
-              Theme
+             welcome to <br/> Bangladesh 
             </div>
           </div>
 
@@ -92,11 +92,11 @@ const Navbar = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setState(!state)}
-              className="p-2 rounded-md text-white btn focus:outline-none"
+              className="p-1 rounded-md text-white btn focus:outline-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-9 w-9"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -105,11 +105,7 @@ const Navbar = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d={
-                    state
-                      ? "M6 18L18 6M6 6l12 12"
-                      : "M4 6h16M4 12h16M4 18h16"
-                  }
+                  d={state ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
                 />
               </svg>
             </button>
@@ -117,15 +113,19 @@ const Navbar = () => {
         </div>
 
         {/* Navbar content */}
-        <div className={`lg:flex lg:items-center lg:space-x-1 ${state ? "block" : "hidden"}`}>
+        <div
+          className={`lg:flex lg:items-center  text-sm lg:space-x-1 ${
+            state ? "block" : "hidden"
+          }`}
+        >
           {/* Navigation Links */}
-          <ul className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-2 mt-2 lg:mt-0">
+          <ul className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-2  lg:mt-0">
             {navigation.map((item, idx) => (
               <li key={idx} className="rounded-lg">
                 <NavLink
                   to={item.path}
                   className={({ isActive }) =>
-                    `px-4 py-2 rounded-md block btn transition ${
+                    `px-4 py-2 rounded-lg font-semibold btn text-blue-600 hover:text-white border border-red-500 hover:bg-gray-800 transition ${
                       isActive ? "text-amber-400" : "text-white"
                     }`
                   }
@@ -158,7 +158,7 @@ const Navbar = () => {
                     }`
                   }
                 >
-                  Register
+                  Branches
                 </NavLink>
               </>
             ) : (

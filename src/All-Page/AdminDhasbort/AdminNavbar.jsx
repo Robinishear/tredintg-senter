@@ -23,7 +23,7 @@ export default function NavbarLayout() {
       {/* Top Navbar */}
       <nav className=" text-white fixed top-0 left-0 w-full z-50 shadow-md">
         <div className="container mx-auto flex justify-between items-center px-4 py-3">
-          <div className="text-2xl font-bold">Admin Page</div>
+          <NavLink to='/' className="text-2xl font-bold">Admin Page</NavLink>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
