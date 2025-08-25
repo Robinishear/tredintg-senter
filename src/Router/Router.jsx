@@ -11,6 +11,11 @@ import StudentResult from "../All-Page/StudentResult/StudentResult";
 import OnlineExam from "../All-Page/OnlineExam/OnlineExam";
 import Institutes from "../All-Page/Institutes/Institutes";
 import PrivateRouts from "../Routs/PrivateRouts";
+import AdminRoot from "../All-Page/AdminDhasbort/AdminRoot";
+import AdHome from "../All-Page/AdminDhasbort/AdminPage/AdHome";
+
+
+
 
 const Router = createBrowserRouter([
   {
@@ -85,6 +90,17 @@ const Router = createBrowserRouter([
         path: "*",
         element: <Error />,
       },
+    ],
+  },
+  {
+    path: "/",
+    element: <AdminRoot />,
+    children: [
+      {
+         path: "AdHome",
+        element: <AdHome />,
+      },
+      
     ],
   },
 ]);

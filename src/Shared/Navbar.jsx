@@ -63,6 +63,7 @@ const Navbar = () => {
     { title: "Student Result", path: "/StudentResult" },
     { title: "Online Exam", path: "/OnlineExam" },
     { title: "Verified Institutes", path: "/Institutes" },
+    { title: "Dashboard", path: "/AdHome" },
   ];
 
   return (
